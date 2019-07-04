@@ -3,6 +3,7 @@ const formatDate = (timeInSeconds) => {
   let hours = Math.floor(timeInSeconds / 3600);
   let seconds = timeInSeconds % 60;
   let minutesLeft = minutes % 60;
+
   if (!timeInSeconds) {
     timeInSeconds = '0' ;
   } else if (timeInSeconds >= 3600) {
@@ -18,7 +19,6 @@ const formatDate = (timeInSeconds) => {
       } else {
       timeInSeconds = String(hours) + "h " + String(minutesLeft) + "m " + String(seconds); 
       }
-  
   } else if (timeInSeconds >= 60) {
     if (seconds == 0){
       timeInSeconds = String(minutes) + "m";
@@ -27,7 +27,6 @@ const formatDate = (timeInSeconds) => {
       timeInSeconds = String(minutes) + "m " + String(seconds);
     }
   } 
-  
     return `${timeInSeconds}s`;
   }
   
